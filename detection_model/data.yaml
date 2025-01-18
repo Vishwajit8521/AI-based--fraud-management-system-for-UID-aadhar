@@ -1,0 +1,10 @@
+path: 'C:/Users/vk740/OneDrive/Desktop/Infosys Training/detection_model/dataset'
+
+train: 'C:/Users/vk740/OneDrive/Desktop/Infosys Training/detection_model/dataset/dataset/dataset/images/train'
+val: 'C:/Users/vk740/OneDrive/Desktop/Infosys Training/detection_model/dataset/dataset/dataset/images/val'
+
+
+names:
+  0: name
+  1: uid
+  2: address
