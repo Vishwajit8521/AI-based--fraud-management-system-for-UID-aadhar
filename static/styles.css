@@ -1,0 +1,249 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #343a40;
+}
+
+html, #its {
+    background: linear-gradient(105deg, #032c62, black);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #343a40;
+    height: 100vh;
+    background-image: url("finalj.jpg");
+    background-size: cover;
+}
+
+#its {
+    position: relative;
+    height: 100%;
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #32d4dc, #d5c369);
+    background-image: url("forward.jpg");
+    background-size: cover;
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+#loader.active {
+    display: flex; /* Ensure it's shown by default */
+}
+
+#content {
+    display: none; /* Initially hidden */
+}
+
+#content.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+#content:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px dotted #dee2e6;
+    border-top: 6px dotted #004aad;
+    border-radius: 50%;
+    animation: spin 2s ease-in infinite;
+}
+
+/* Centering styles for the loader */
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#content {
+    display: block; /* Ensure content is displayed after loader disappears */
+}
+
+/* Form container styles */
+form {
+    margin-bottom: 30px;
+    max-width: 650px; /* Set maximum width for form */
+    margin: 20px auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding inside the form */
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.2); /* Fully transparent black background */
+    box-shadow: 8px 8px 15px rgba(244, 3, 3, 0.5); /* Subtle shadow for raised effect */
+    color: #ffffff; /* Text color for readability */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Add a subtle border to define the form edges */
+}
+
+/* Form label styling */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Input file styling */
+input[type="file"] {
+    background-color: transparent; /* Makes the background transparent */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+    color: white; /* Text color for file name */
+    padding: 5px; /* Adds some padding for better usability */
+    border-radius: 5px; /* Smooth rounded edges */
+    outline: none; /* Removes default focus outline */
+    font-size: 14px; /* Adjusts font size */
+    width: 100%; /* Stretches to full width of parent */
+    transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
+}
+
+input[type="file"]:hover {
+    border-color: rgba(255, 255, 255, 0.8); /* Brightens the border on hover */
+}
+
+input[type="file"]::file-selector-button {
+    background: rgba(0, 0, 0, 0.5); /* Transparent background for the button */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    color: white; /* Text color for the button */
+    padding: 5px 10px; /* Adds padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth effects */
+    font-size: 14px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: rgba(255, 255, 255, 0.2); /* Subtle highlight on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+/* Button hover effects */
+button {
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Primary button styles */
+.btn-primary {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* Text color for contrast */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Adjust padding for a better shape */
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+    font-size: 16px; /* Adjust font size */
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Brighten border on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Success button styles (hidden by default) */
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    display: none; /* Hidden by default */
+}
+
+.btn-success.visible {
+    display: inline-block; /* Shown when results are ready */
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Table styling for results */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+thead th, tbody td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Alerts and messages */
+#results p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #1073c9;
+}
+
+/* Center the title "Aadhaar Fraud Management System" */
+h1 {
+    text-align: center; /* Center the title */
+    color: white; /* White color */
+    font-size: 2rem; /* Adjust the font size */
+    margin-bottom: 30px; /* Space below the title */
+    font-family: 'Arial', sans-serif;
+    font-weight: 600; /* Bold text for emphasis */
+}
+
+/* Spinner animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade-in animation for content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
